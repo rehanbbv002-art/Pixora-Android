@@ -1,0 +1,35 @@
+Pixora-Android/
+├── .github/
+│   └── workflows/
+│       └── build-apk.yml               # GitHub Actions automated Debug APK builder
+├── gradle/
+│   ├── wrapper/
+│   │   └── gradle-wrapper.properties   # Gradle 8.9 distribution
+│   └── libs.versions.toml             # Modern Gradle Version Catalog (Compose BOM, Coil, Material3)
+├── app/
+│   ├── build.gradle.kts                # App module build script (compileSdk 35, Java 17, Compose)
+│   ├── proguard-rules.pro              # Proguard optimization rules
+│   └── src/
+│       └── main/
+│           ├── AndroidManifest.xml     # Scoped storage permissions, MainActivity & FileProvider
+│           ├── res/
+│           │   ├── values/             # strings.xml, colors.xml, themes.xml
+│           │   └── xml/                # file_paths.xml, backup & data extraction rules
+│           └── java/com/pixora/app/
+│               ├── MainActivity.kt     # ComponentActivity with Edge-to-Edge & ViewModel
+│               ├── model/
+│               │   └── PixoraModels.kt # Canvas layers, ratios, template models & export formats
+│               ├── viewmodel/
+│               │   └── PixoraViewModel.kt # StateFlow, undo/redo history, layer manipulation
+│               ├── ui/
+│               │   ├── theme/          # PixoraTheme, Color.kt, Type.kt
+│               │   ├── screens/        # PixoraMainScreen.kt with system Photo Picker launcher
+│               │   └── components/     # CanvasViewCompose, PixoraBottomToolbar, ExportDialogCompose
+│               └── util/
+│                   └── ImageExportUtils.kt # MediaStore rendering, PNG/JPEG compression, and sharing
+├── build.gradle.kts                    # Root build configuration
+├── settings.gradle.kts                 # Repositories & module settings
+├── gradle.properties                   # JVM memory & AndroidX flags
+├── gradlew                             # Linux / macOS Gradle wrapper execution script
+├── gradlew.bat                         # Windows Gradle wrapper execution script
+└── README.md                           # Setup & build documentation
